@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- *
+ * <p> Generate fizz buzz game output</p>
  */
 @AllArgsConstructor
 @Component
@@ -27,9 +27,8 @@ public class FizzBuzzGenerator {
     private final Predicate<Integer> contains5 = val -> String.valueOf(val).contains("5");
 
     /**
-     *
-     * @param maxValue
-     * @return
+     * @param maxValue the max value for fizz buzz game.
+     * @return List of fizz buzz game values.
      */
     public List<String> generate(Integer maxValue) {
         return IntStream.rangeClosed(MIN, Optional.ofNullable(maxValue).orElse(DEFAULT_MAX))
@@ -37,8 +36,9 @@ public class FizzBuzzGenerator {
     }
 
     /**
+     * <p>For each value evaluate fizz buzz</p>
      *
-     * @param val
+     * @param  val input value
      * @return
      */
     private String fizzOrBuzz(Integer val) {
